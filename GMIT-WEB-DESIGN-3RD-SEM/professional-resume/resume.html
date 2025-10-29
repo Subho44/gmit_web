@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        *{box-sizing: border-box; margin: 0; padding: 0;}
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color:#222 ;
+            background:#d4dae7;
+            padding: 20px;
+        }
+        .card {
+            background: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        .row {
+            display: flex;
+            gap:20px;
+        }
+        .col-left{
+            width: 250px;
+        }
+        .col-right{
+            flex: 1;
+        }
+       .photo {
+        width: 100px;
+        height: 100px;
+        background: #ecd0d0;
+        border-radius: 50%;
+        margin-bottom: 12px;
+        background: url(p1.jpeg) center/cover;
+        animation: x 3s linear infinite;
+        
+       }
+       @keyframes x{
+        form {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+       }
+       
+       .name {
+        font-size: 20px;
+        font-weight: bold;
+
+       }
+       
+       .name:hover {
+        color: aqua;
+       }
+       .title {
+        margin-bottom: 12px;
+        color:#555;
+        
+       }
+       .contact p {
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 6px;
+
+       } 
+       h2 {
+        font-size: 16px;
+        margin-bottom: 6px;
+        color: #444;
+       }  
+       .muted {
+        color: #555;
+        font-size: 14px;
+       }
+       ul {
+        list-style-type: none;
+        margin-left: 18px;
+       }
+       li {
+          margin-bottom: 6px;
+       }
+
+       @media (max-width:640px) {
+        .row{flex-direction: column;}
+        .col-left{width: auto;}
+        .photo{width: 80px; height: 80px;}
+       }
+    </style>
+</head>
+
+<body>
+    <article class="card">
+        <div class="row">
+            <!--left column contact,skills,education-->
+            <aside class="col-left">
+                <div class="photo"></div>
+                <div class="name">Subhojit Santra</div>
+                <div class="title">Full Stack Developer</div>
+                <section class="contact">
+                    <h2>Contact</h2>
+                    <p>Email:raj@gmail.com</p>
+                    <p>Phone:+91 6289619338</p>
+                    <p>Location:Kolkata, India</p>
+                </section>
+                <section>
+                    <h2>Skills</h2>
+                    <p class="muted">REACT JS, NEXT JS, ANGULAR CLI</p>
+
+                </section>
+                <section>
+                    <h2>Education</h2>
+                    <p class="muted">M.tech, SIT COLLEGE-2020</p>
+
+                </section>
+            </aside>
+
+             <main class="col-right">
+        <section>
+            <h2>Summary</h2>
+            <p class="muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro delectus eos quisquam.</p>
+
+        </section>
+
+     <section>
+            <h2>Experience</h2>
+            <div>
+                <h3 style="margin-top: 10px;">Infotech-Frontend Developer</h3>
+                <p class="muted" style="margin-bottom: 5px;">Nov 2020-Present | Bengaluru </p>
+                <ul>
+                    <li>Built Responsive ui with react js...</li>
+                    <li>Built Responsive ui with vue js...</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="margin-top: 10px;">Ardent Computech:Full Stack Developer & Guest Faculty</h3>
+                <p class="muted" style="margin-bottom: 5px;">Nov 2025-Present | Kolkata </p>
+                <ul>
+                    <li>Built Major Project with Mern Stack...</li>
+                    <li>Built Major Project with Mean Stack...</li>
+
+                </ul>
+            </div>
+
+
+     </section>
+    
+     <section>
+            <h2>Projects</h2>
+            <div>
+                
+                <ul>
+                    <li><b>Net Banking System:</b>Uco bank process</li>
+                    <li><b>E-bike System:</b>Bike Company Related</li>
+                    
+                </ul>
+            </div>
+     </section>
+    
+      <section>
+            <h2>Certifications</h2>
+            <div>
+                
+                <ul>
+                    <li><b>Certification name:</b>2025</li>
+                     <li><b>Certification name:</b>2025</li>
+                    
+                    
+                </ul>
+            </div>
+     </section>
+
+
+             </main>
+        </div>
+
+    </article>
+
+   
+
+
+</body>
+
+</html>
