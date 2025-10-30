@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input placeholder="enter number" type="number" id="number">
+    <button id="btn">Check</button>
+    <p id="output" ></p>
+    <script>
+        document.getElementById('btn').onclick = function() {
+            const v = Number(document.getElementById('number').value);
+            const out = (isNaN(v)) ? 'enter number: ' : (v%2 == 0 ? 'Even' :'odd');
+            document.getElementById('output').textContent = out;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--counter app-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="dec">-</button>
+        <span id="num">0</span>
+        <button id="inc">+</button>
+    </div>
+    <script>
+        let n = 0;
+        const e = document.getElementById('num');
+        document.getElementById('inc').onclick = function() {
+            e.textContent = ++n;
+        }
+        document.getElementById('dec').onclick = function() {
+            e.textContent = --n;
+        }
+    </script>
+    
+</body>
+</html>
