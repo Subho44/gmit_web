@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table ,th, td {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Product Add and Remove: </h2>
+    <input id="pname" placeholder="pname">
+    <br>
+    <input id="pdesc" placeholder="pdesc">
+    <br>
+    <input id="pprice" placeholder="pprice">
+    <br>
+    <button id="btn">Add Product</button>
+     <div>
+        <input id="searchbox" placeholder="search....">
+    </div>
+    <div id="output"></div>
+
+   
+
+    <script>
+        const products = [];
+        const container = document.getElementById('output');
+        const addbtn = document.getElementById('btn');
+        const searchbox = document.getElementById('searchbox');
+        function displayproduct(filtertext = '') {
+            container.innerHTML = '';
+
+            //filter name wise
+            const filteredproduct = products.filter(p=>
+                p.name.toLowerCase().includes(filtertext.toLowerCase())
+            );
+
+
+            const table = document.createElement('table');
+
+            const headerrow = document.createElement('tr');
+            headerrow.innerHTML = `
+             <th>Product name</th>
+             <th>Product Description</th>
+             <th>Product Price</th>
+             <th>Action</th>
+            
+            `;
+            table.appendChild(headerrow);
+
+            filteredproduct.forEach((x,index)=>{
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${x.name}</td>
+                 <td>${x.desc}</td>
+                  <td>${x.price}</td>
+                  <td>     
+                  <button class='remove' onclick="d(${index})">Remove</button>
+                  </td>  
+                  
+                  `;
+                  table.appendChild(row);
+
+            });
+            container.appendChild(table);
+
+
+        }
+        //add product
+        addbtn.onclick = ()=>{
+            const name = document.getElementById('pname').value.trim();
+            const desc = document.getElementById('pdesc').value.trim();
+            const price = document.getElementById('pprice').value.trim();
+
+            //add product inside array
+          products.push({name,desc,price});
+          document.getElementById('pname').value = '';
+          document.getElementById('pdesc').value = '';
+          document.getElementById('pprice').value = '';
+
+          displayproduct(searchbox.value);
+
+
+        };
+
+        //remove product
+        function d(index) {
+            products.splice(index,1);
+            displayproduct(searchbox.value);
+        }
+        searchbox.oninput = ()=> {
+            displayproduct(searchbox.value);
+        }
+
+       displayproduct();     
+            
+        
+    </script>
+
+</body>
+
+</html>
