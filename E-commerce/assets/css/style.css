@@ -1,26 +1,58 @@
+/* Theme helpers */
+:root {
+  --primary: #0d6efd;
+  --dark: #212529;
+}
 body {
-    font-family: "Inter", sans-serif;
-    background-color: #fff;
-    color: var(--dark);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
 }
+
+/* Hero */
 .hero {
-    background:linear-gradient(135deg,#e3f2fd,#fff) ;
-    padding: 80px 0;
+  background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 60%);
 }
+.rounded-2xl { border-radius: 1rem; }
+.shadow-soft { box-shadow: 0 12px 30px rgba(13,110,253,.15); }
 .badge-soft {
-    background-color: #90a7b7;
-    color: #fff;
-    border: none;
+  background: rgba(13,110,253,.1);
+  color: #0d6efd;
+  border: 1px solid rgba(13,110,253,.2);
 }
+
+/* Product cards */
 .product-card {
-    border: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,.06);
-    transition: all .2s ease;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.06);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0,0,0,.12);
 }
-.rounded-2xl {
-    border-radius: 1rem;
+.product-card .card-img-top {
+  object-fit: cover;
+}
+
+/* Toast (pure CSS/JS) */
+#toast-root { pointer-events: none; }
+.toast-lite {
+  pointer-events: auto;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  margin-top: .5rem;
+  min-width: 220px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.toast-lite.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Small responsive tweak */
+@media (max-width: 575.98px){
+  .display-4 { font-size: 2rem; }
 }
