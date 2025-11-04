@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkart-Ecommerce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+ <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!--Responsive Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container ">
+            <a class="navbar-brand" href=""><img src="assets/img/logo.png" alt="img" height="35"></a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#x">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="x">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#categories">Categoryes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Reviews</a>
+                </li>
+
+              </ul>
+              <form class="form-inline">
+                <input class="form-control mr-2" type="search" placeholder="search...">
+                <button class="btn btn-primary">Search</button>
+
+              </form>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--Hero section-->
+<header class="hero">
+    <div class="container text-md-left text-center py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+               <span class="badge badge-soft">FREE SHIPPING on $999+</span> 
+               <h1 class="display-4 font-weight-bold">Shop Smart,Live Better</h1>
+               <p class="lead text-muted">Discover amazing deals on electronices, fashion and more- updated daily.</p>
+               <a href="" class="btn btn-dark btn-lg mr-3">Shop Now</a>
+               <a href="" class="btn btn-outline-primary btn-lg">Learn More</a>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0 text-center">
+                <img src="assets/img/p1.jpg" alt="img" class="img-fluid rounded-2xl shadow-soft">
+            </div>
+        </div>
+    </div>
+
+</header>
+<!--Features section-->
+<section id="features" class="py-5 text-center">
+    <div class="container">
+        <h2>Why Shop With Us</h2>
+        <div class="row">
+            <div class="col-md-3 col-6 mb-4">
+                <div>
+                   <i class="fas fa-truck"></i>
+                    <h6>Fast Delivery</h6>
+                    <p class="text-muted small">2-5 days</p>
+                </div>
+            </div>
+             <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-money-bill"></i>
+                <div><h6>Secure Payments</h6></div>
+                  <p class="text-muted small">UPI, Cards,Emi</p>
+            </div>
+             <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-undo-alt"></i>
+                <div><h6>Easy Returns</h6></div>
+                  <p class="text-muted small">7-day policy</p>
+            </div>
+             <div class="col-md-3 col-6 mb-4">
+                <i class="fas fa-star"></i>
+                <div><h6>Top Rated</h6></div>
+                  <p class="text-muted small">Trusted by 10k+ </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!--Products-->
+<section id="products" class="py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between mb-4">
+            <h3 class="">Featured Products</h3>
+            <a href="#" class="text-primary">View All</a>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                 <div class="card product-card h-100">
+                    <img src="assets/img/p12.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Product Cards</h6>
+                        <p class="text-muted small">Nice Products</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>2,999 <del class="small text-muted">$3,799</del></span>
+                            <button class="btn btn-sm btn-dark" data-add-to-cart data-name="Product Cards">Add </button>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                 <div class="card product-card h-100">
+                    <img src="assets/img/p11.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Watch Cards</h6>
+                        <p class="text-muted small">Nice Products</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>1,999 <del class="small text-muted">$2,799</del></span>
+                          <button class="btn btn-sm btn-dark" data-add-to-cart data-name="Watch Cards">Add </button>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                 <div class="card product-card h-100">
+                    <img src="assets/img/p16.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>T-shirt Cards</h6>
+                        <p class="text-muted small">Nice Products</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>4,999 <del class="small text-muted">$5,799</del></span>
+                           <button class="btn btn-sm btn-dark" data-add-to-cart data-name="T-shirt Cards">Add </button>
+                        </div>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
