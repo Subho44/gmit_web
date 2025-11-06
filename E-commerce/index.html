@@ -49,10 +49,10 @@
         </form>
 
         <!-- Cart (desktop) -->
-        <a href="#" class="btn btn-outline-primary ml-lg-3 d-none d-lg-inline-block position-relative">
+        <button id="open-cart-btn" type="button" class="btn btn-outline-primary ml-lg-3 d-none d-lg-inline-block position-relative" data-toggle="modal" data-target="#cartModal">
           <i class="fas fa-shopping-cart"></i>
           <span id="cart-count-desktop" class="badge badge-pill badge-danger position-absolute" style="top:-8px; right:-8px;">0</span>
-        </a>
+        </button>
       </div>
     </div>
   </nav>
@@ -193,6 +193,104 @@
   <!-- Toast container (for JS toasts) -->
   <div id="toast-root" aria-live="polite" aria-atomic="true" style="position: fixed; right: 1rem; bottom: 1rem; z-index: 1080;"></div>
 
+  <!--CART MODAL-->
+
+  <div class="modal fade" id="cartModal" aria-hidden="true"  tabindex="-1" >
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Cart</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="emptyCart">
+            <p>Your cart is empty</p>
+          </div>
+
+          <div id="cartTable" class="table-responsive">
+            <table class="table table-sm align-middle">
+              <thead class="thead-dark">
+              <tr>
+                <th>Item</th>
+                <th style="width: 110px;" class="text-center">Qty</th>
+                <th style="width: 110px;" class="text-center">Price</th>
+                <th style="width: 110px;" class="text-center">Total</th>
+                <th style="width: 60px;"></th>
+              </tr>      
+              </thead>
+               <tbody id="cartTableBody"></tbody>
+            </table>
+
+          </div>
+
+          <div class="d-flex  justify-content-end">
+            <div class="text-right">
+            <div>Subtotal: <b>$<span id="subtotal">0</span></b></div>
+             <div>Tax(10%): <b>$<span id="tax">0</span></b></div>
+              <div>Grand total: <b>$<span id="grandTotal">0</span></b></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex  justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Continue Shopping</button>
+        <button id="goCheckoutBtn" type="button" class="btn btn-outline-danger">Process to Checkout</button>
+      </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <!--checkout modal-->
+ <div class="modal fade" id="checkoutModal" aria-hidden="true"  tabindex="-1" >
+    <div class="modal-dialog modal-md  modal-dialog-scrollable">
+      <div class="modal-content">
+        <form id="checkoutForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Checkout</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+         <div class="form-group">
+            <label>Phone</label>
+            <input type="tel" class="form-control" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea  class="form-control" name="address" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Payment Method</label>
+            <select class="form-control" name="payment" required>
+              <option value="COD">Cash On Delivery</option>
+              <option value="UPI">UPI</option>
+              <option value="CARD">Credit/Debit Card</option>
+
+            </select>
+          </div>
+          <div class="alert alert-info mb-0">
+             Payable now: <b>$<span id="payableNow">0</span></b>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex  justify-content-between">
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Back</button>
+        <button id="placeOrderBtn" type="button" class="btn btn-outline-danger">Place Order</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+
+  </div>
   <!-- jQuery (slim), Popper, Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
