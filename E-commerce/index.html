@@ -24,7 +24,14 @@
       </a>
 
       <!-- Cart (badge updates via JS) -->
-      <div class="d-lg-none">
+       <div class="d-lg-none d-flex align-items-center">
+        <button id="detectLocationBtnMobile" type="button" class="btn btn-outline-secondary" title="Detect Location">
+          <i class="fas fa-map-marker"></i>
+        </button>
+        
+      </div>
+      <div class="d-lg-none d-flex align-items-center">
+
         <a href="#" class="btn btn-outline-primary position-relative">
           <i class="fas fa-shopping-cart"></i>
           <span id="cart-count" class="badge badge-pill badge-danger position-absolute" style="top:-8px; right:-8px;">0</span>
@@ -47,7 +54,12 @@
           <input class="form-control mr-2" type="search" placeholder="Search...">
           <button class="btn btn-primary" type="button">Search</button>
         </form>
-
+        <!--location-->
+        <button id="detectLocationBtn" type="button" class="btn btn-outline-primary mr-2" title="Detect Location">
+          <i class="fas fa-map-marker-alt"></i>
+          
+        </button>
+        <span id="locationShort" class="text-muted small mr-3">Location :Unkown</span>
         <!-- Cart (desktop) -->
         <button id="open-cart-btn" type="button" class="btn btn-outline-primary ml-lg-3 d-none d-lg-inline-block position-relative" data-toggle="modal" data-target="#cartModal">
           <i class="fas fa-shopping-cart"></i>
@@ -286,6 +298,33 @@
         <button id="placeOrderBtn" type="button" class="btn btn-outline-danger">Place Order</button>
         </div>
         </form>
+      </div>
+      
+    </div>
+
+  </div>
+
+  <!--location modal-->
+   <div class="modal fade" id="locationModal" aria-hidden="true"  tabindex="-1" >
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your Location</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="locStatus" class="text-muted small mb-2">Click the Location detect</div>
+          <div><b>Address:</b> <span id="locAddress">-</span></div>
+          <div><b>Coordinates:</b> <span id="locCoords">-</span></div>
+          <div class="mt-2">
+            <a id="locMapLink" href="#" target="_blank" class="btn btn-sm btn-outline-danger d-none">Open in Maps</a>
+          </div>
+          <div class="alert alert-info mt-3 mb-0">
+          Geolocation  works on https or localhost only
+          </div>
+        </div>
       </div>
       
     </div>
